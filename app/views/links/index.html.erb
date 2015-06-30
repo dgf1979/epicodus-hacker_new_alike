@@ -4,8 +4,13 @@
 </div>
 <div class="row news-items">
   <table>
+      <% count = 0 %>
       <% @links.each do |link| %>
+      <% count += 1 %>
         <tr class="link">
+          <td class="count">
+            #<%= count %>
+          </td>
           <td>
             <a href="<%=link.url%>" target="_new"><%= link.title %></a>
           </td>
