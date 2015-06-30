@@ -1,0 +1,23 @@
+<div class="row news-nav">
+  <span class="title">Hacker News-Alike</span>
+  <span class="nav-link"><%= link_to 'Add Link', new_link_path %></span>
+</div>
+<div class="row news-items">
+  <table>
+      <% @links.each do |link| %>
+        <tr class="link">
+          <td>
+            <a href="<%=link.url%>" target="_new"><%= link.title %></a>
+          </td>
+          <td class="upvotes">
+            <%= link.upvotes %>
+          </td>
+          <td class="upvote">
+            <%= link_to '<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">Like</span>'.html_safe, link_path(link, :upvotes => link.upvote), method: "patch" %>
+          </td>
+        </tr>
+      <% end %>
+  </table>
+
+
+</div>
