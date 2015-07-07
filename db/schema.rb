@@ -17,9 +17,11 @@ ActiveRecord::Schema.define(version: 20150630211926) do
   enable_extension "plpgsql"
 
   create_table "links", force: :cascade do |t|
-    t.string  "url"
-    t.string  "title"
-    t.integer "upvotes", default: 0
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+    t.integer  "upvotes",    default: 0
   end
 
 end
